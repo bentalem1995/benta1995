@@ -1,6 +1,6 @@
 const express = require("express");
 // global.config = require("../server-node/config-dev.json");
- global.config = require("../server-node/config-pro.json");
+ global.config = require( __dirname + "/config-pro.json");
 const Server = express();
 //global.isProduction =false;
 const bodyParser = require("body-parser");
