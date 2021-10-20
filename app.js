@@ -1,16 +1,15 @@
 const express = require("express");
-// global.config = require("../server-node/config-dev.json");
- global.config = require( __dirname + "/config-pro.json");
+global.config = require("./config-pro.json");
 const Server = express();
 //global.isProduction =false;
 const bodyParser = require("body-parser");
 const cookies = require("cookie-parser");
 const productsController = require("./controllers/product-controller")
 const loginController = require("./controllers/login-controller");
-const addCartController = require("../server-node/controllers/addCartController")
-const forumController = require("../server-node/controllers/forumController")
-const imagesController =require("../server-node/controllers/imagesController")
-const clocksController = require("../server-node/controllers/clocks-Ccontroller")
+const addCartController = require("./controllers/addCartController")
+const forumController = require("./controllers/forumController")
+const imagesController =require("./controllers/imagesController")
+const clocksController = require("./controllers/clocks-Ccontroller")
 const expressSession = require("express-session");
 Server.use(expressSession({
    name:"northwind",
