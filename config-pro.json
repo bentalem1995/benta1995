@@ -1,0 +1,15 @@
+{
+    "isProduction":"true",
+    "mysql":
+    {
+        "host":"localhost",
+        "database":"ymStore",
+        "user":"root",
+        "password":""
+
+
+    },
+    "jwt":{
+        "SecretCode":"BentaIsTheBest"
+     }
+}
