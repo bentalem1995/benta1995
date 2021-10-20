@@ -17,7 +17,8 @@ Server.use(expressSession({
    resave:true,
    saveUninitialized:false
 }))
-const listener =   Server.listen(5000,()=>{console.log("Lessening http://localhost:5000")});
+const PORT = process.env.PORT || 5000;
+const listener =   Server.listen(PORT, ()=>{console.log("Lessening http://localhost:5000")});
 Server.use("/api/products",productsController);
 Server.use("/api/images",imagesController);
 Server.use("/api/cart",addCartController);
