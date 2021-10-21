@@ -14,7 +14,7 @@ async function getAllForum() {
 }
 async function addForum(forum) {
     try {
-       const qry = `INSERT INTO Forum (UserName,Title,UserText) VALUES ('${forum.username}' ,'${forum.title}','${forum.text}')`;
+       const qry = `INSERT INTO forum (UserName,Title,UserText) VALUES ('${forum.username}' ,'${forum.title}','${forum.text}')`;
        const info = await dal.executeAsync(qry);
        forum.id = info.insertId;
        return forum;
