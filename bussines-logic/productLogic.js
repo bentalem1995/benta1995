@@ -28,7 +28,7 @@ async function getOneProduct(id){
 
 
 async function addProduct(product){
-   const qry = `INSERT INTO products (ProductName,UnitPrice,UnitsInStock,ProductImage,CategoryID,Description) VALUES ('${product.name}' ,${product.price},${product.stock},'${product.image}',${product.categoryID},'${product.description}')`;   
+   const qry = `INSERT INTO products (ProductName,UnitPrice,UnitInStock,ProductImage,CategoryID,Description) VALUES ('${product.name}' ,${product.price},${product.stock},'${product.image}',${product.categoryID},'${product.description}')`;   
    const info = await dal.executeAsync(qry);
    product.id = info.insertId;
    return product;
