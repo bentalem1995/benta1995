@@ -8,7 +8,7 @@ async function getAllProduct()
    
      // if (!cache.get("products")) {
 
-         const qry = "SELECT ProductID as id, ProductName as name , UnitPrice as price , UnitsInStock as stock ,ProductImage as image ,Description as description FROM products";
+         const qry = "SELECT ProductID as id, ProductName as name , UnitPrice as price , UnitInStock as stock ,ProductImage as image ,Description as description FROM products";
          const products = await dal.executeAsync(qry);
         // await getDelay(5000);
         // cache.put("products", products,1000*60*60);
