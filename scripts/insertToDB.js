@@ -18,10 +18,9 @@ const connection = mysql.createConnection(
             console.log("connection success on new mysql");
         }
     });
-function creatTables(){
-connection.query('CREATE TABLE products (ProductID int,ProductName varchar(50),UnitPrice decimal UnitInStock int,CategoryID int,ProductImage varchar(200),Description varchar(200)))')
-connection.query('CREATE TABLE login (UserID int, UserName varchar(50),PassWord varchar(1000),Email varchar(50))')
-connection.query('CREATE TABLE forum (ForumID int ,UserName varchar(50),UserText varchar(200),Title varchar(50))' ,(err,res)=>
-{console.log(err)})
-}
-module.exports ={creatTables}
+
+
+
+
+    // connection.query('INSERT INTO products (ProductID,ProductName,UnitPrice ,UnitInStock ,CategoryID ,ProductImage,Description) Values (1,a,34,44,3,kk,eeeeedd));',((err,res)=>{console.log(err);console.log(res)}))
+
