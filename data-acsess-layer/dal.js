@@ -1,4 +1,3 @@
-const { json } = require("body-parser");
 const mysql = require("mysql");
 const connection = mysql.createConnection(
     {
