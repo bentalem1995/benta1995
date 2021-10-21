@@ -1,6 +1,7 @@
 
 
 const mysql = require("mysql");
+const { getProductSales } = require("../bussines-logic/productLogic");
 const connection = mysql.createConnection(
     {
         host:'sql4.freemysqlhosting.net',
@@ -19,8 +20,7 @@ const connection = mysql.createConnection(
         }
     });
 
-
-
-
-    // connection.query('INSERT INTO products (ProductID,ProductName,UnitPrice ,UnitInStock ,CategoryID ,ProductImage,Description) Values (1,a,34,44,3,kk,eeeeedd));',((err,res)=>{console.log(err);console.log(res)}))
+// connection.query('CREATE TABLE products(ProductID int NOT NULL PRIMARY KEY ,ProductName varchar(50),UnitPrice decimal,UnitsInStock int,Description varchar(200),ProductImage varchar(200),CategoryID int )');
+// connection.query('DROP TABLE products')
+// connection.query('INSERT INTO products (ProductName,UnitPrice,UnitsInStock,Description) Values ("בננה",20,40,"מוצר טוב")')
 
