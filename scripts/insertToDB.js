@@ -22,5 +22,5 @@ const connection = mysql.createConnection(
 
 // connection.query('CREATE TABLE products(ProductID int NOT NULL ,PRIMARY KEY(ProductID) ,ProductName varchar(50),UnitPrice decimal,UnitsInStock int,Description varchar(200),ProductImage varchar(200),CategoryID int )');
 // connection.query('DROP TABLE products')
-connection.query('INSERT INTO products (ProductName,UnitPrice,UnitsInStock,Description) Values ("בננה",20,40,"מוצר טוב")');
+connection.query('INSERT INTO products(ProductName,UnitPrice,UnitsInStock,Description) Values ("בננה",20,40,"מוצר טוב")');
 
