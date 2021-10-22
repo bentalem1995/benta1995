@@ -29,10 +29,10 @@ const fileFilter =(req,file,cb)=>{
 
 }
 const upload = multer({storage:storage,fileFilter:fileFilter,limits:{fileSize:1024*1024*5}})
-router.get("/images/:image", (req, res) => {
+router.get("/images/:id", (req, res) => {
     try {
-        const image = req.params.image;
-        return (res.sendFile(+ "../assets/image/" + image));
+        const image = +req.params.image;
+        return (res.sendFile(+ "../assets/image/" + id));
     } catch (err) {
         response.status(400).send(errorHandler(err));
     }
