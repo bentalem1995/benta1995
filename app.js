@@ -1,6 +1,5 @@
 const express = require("express");
 global.config = require("./config-pro.json");
-const creatTables = require("./scripts/insertToDB")
 const Server = express();
 //global.isProduction =false;
 const bodyParser = require("body-parser");
