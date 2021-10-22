@@ -29,10 +29,10 @@ const fileFilter =(req,file,cb)=>{
 
 }
 const upload = multer({storage:storage,fileFilter:fileFilter,limits:{fileSize:1024*1024*5}})
-router.get("/images/:id", (req, res) => {
+router.get("/images/:image", (req, res) => {
     try {
         const id = req.params.id;
-        return (res.sendFile("/MyFirstPro/server-node/assets/image/" + id));
+        return (res.sendFile("./assets/image/" + image));
     } catch (err) {
         response.status(400).send(errorHandler(err));
     }

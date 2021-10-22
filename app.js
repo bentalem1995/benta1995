@@ -1,5 +1,6 @@
 const express = require("express");
 global.config = require("./config-pro.json");
+// global.config = require("./config-dev.json");
 const Server = express();
 //global.isProduction =false;
 const bodyParser = require("body-parser");
@@ -8,7 +9,6 @@ const productsController = require("./controllers/product-controller")
 const loginController = require("./controllers/login-controller");
 const addCartController = require("./controllers/addCartController")
 const forumController = require("./controllers/forumController")
-const imagesController =require("./controllers/imagesController")
 const clocksController = require("./controllers/clocks-Ccontroller")
 const expressSession = require("express-session");
 Server.use(expressSession({
@@ -20,7 +20,6 @@ Server.use(expressSession({
 const PORT = process.env.PORT || 5000;
 const listener =   Server.listen(PORT, ()=>{console.log("Lessening http://localhost:5000")});
 Server.use("/api/products",productsController);
-Server.use("/api/images",imagesController);
 Server.use("/api/cart",addCartController);
 Server.use("/api/login" ,loginController );
 Server.use("/api/forum" ,forumController);
