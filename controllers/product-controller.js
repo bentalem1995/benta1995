@@ -31,7 +31,7 @@ const fileFilter =(req,file,cb)=>{
 const upload = multer({storage:storage,fileFilter:fileFilter,limits:{fileSize:1024*1024*5}})
 router.get("/images/:image", (req, res) => {
     try {
-        const id = req.params.id;
+        const image = req.params.image;
         return (res.sendFile("../assets/image/" + image));
     } catch (err) {
         response.status(400).send(errorHandler(err));
@@ -121,7 +121,8 @@ router.get("/", (async (request, response) => {
         return response.json(products);
     }
     catch (err) {
-        response.status(404).send(errorHandler(err))
+        // response.status(404).send(errorHandler(err))\
+        console.log(err)
     }
 
 }));
