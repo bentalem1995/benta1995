@@ -11,12 +11,12 @@ const addCartController = require("./controllers/addCartController")
 const forumController = require("./controllers/forumController")
 const clocksController = require("./controllers/clocks-Ccontroller")
 const expressSession = require("express-session");
-Server.use(expressSession({
-   name:"northwind",
-   secret:"bentaisthebestone" ,
-   resave:true,
-   saveUninitialized:false
-}))
+// Server.use(expressSession({
+//    name:"northwind",
+//    secret:"bentaisthebestone" ,
+//    resave:true,
+//    saveUninitialized:false
+// }))
 const PORT = process.env.PORT || 5000;
 const listener =   Server.listen(PORT, ()=>{console.log("Lessening http://localhost:5000")});
 Server.use("/api/products",productsController);
