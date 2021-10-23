@@ -30,11 +30,11 @@ const fileFilter =(req,file,cb)=>{
 
 }
 const upload = multer({storage:storage,fileFilter:fileFilter,limits:{fileSize:1024*1024*5}})
-router.get("/images/:image", (req, res) => {
+router.get("/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-       return(res.sendFile("https://www.daniel-matat.co.il/media/main/%D7%A6%D7%9E%D7%99%D7%93%D7%99%D7%9D_1_1.jpg"))
+       return(res.sendFile("../assets/image/"+image));
     } catch (err) {
         // res.status(404).send(errorHandler(err));
         res.send(err.message)
