@@ -34,7 +34,7 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-       return(res.sendFile("../assets/images" + image))
+       return(res.sendFile("https://www.daniel-matat.co.il/media/main/%D7%A6%D7%9E%D7%99%D7%93%D7%99%D7%9D_1_1.jpg"))
     } catch (err) {
         // res.status(404).send(errorHandler(err));
         res.send(err.message)
