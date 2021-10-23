@@ -32,9 +32,9 @@ const upload = multer({storage:storage,fileFilter:fileFilter,limits:{fileSize:10
 router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
-        return (res.sendFile(__dirname +  "/assets/image/" + image));
+        return (res.sendFile(__dirname +  "../assets/image/" + image));
     } catch (err) {
-        res.status(400).send(errorHandler(err));
+        res.status(404).send(errorHandler(err));
     }
 });
 
