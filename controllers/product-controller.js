@@ -36,8 +36,8 @@ router.get("/images/:image", (req, res) => {
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
         res.sendFile("../assets/images" + image)
     } catch (err) {
-        // res.status(404).send(errorHandler(err));
-        res.send(err.message)
+        res.status(404).send(errorHandler(err));
+        // res.send(err.message)
     }
 });
 
