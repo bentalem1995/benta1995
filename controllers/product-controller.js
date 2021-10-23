@@ -6,7 +6,6 @@ const verifyToken = require("../middlleware/verifyToken");
 const errorHandler = require("../helpers/error-handler");
 const multer = require("multer")
 const path = require("path")
-const one = require("../assets/image/")
 const router = express.Router();
 router.use(express.json());
 const storage = multer.diskStorage({
@@ -34,7 +33,7 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-        return(res.sendFile(one +image))
+        return(res.sendFile("../assets/image/" +image))
     } catch (err) {
         // res.status(404).send(errorHandler(err));
         res.send(err.message)
