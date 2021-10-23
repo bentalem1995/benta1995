@@ -34,7 +34,7 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-       return(res.sendFile(__dirname + '/image/ '+image));
+       return(res.sendFile(path.join(__dirname + '/image/ '+image)));
     } catch (err) {
         // res.status(404).send(errorHandler(err));
         res.send(err.message)
