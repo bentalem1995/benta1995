@@ -33,7 +33,7 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-        return(res.json({"body":"body"}))
+        return(res.sendFile(__dirname + "/assets/image/1631208683413.png"))
     } catch (err) {
         res.status(404).send(errorHandler(err));
     }
