@@ -4,7 +4,7 @@ const Product = require("../modules/product");
 const verify = require("../middlleware/verify");
 const verifyToken = require("../middlleware/verifyToken");
 const errorHandler = require("../helpers/error-handler");
-const imgsrc = require(__dirname + "/image/")
+// const imgsrc = require(__dirname + "/image/")
 const multer = require("multer")
 const path = require("path")
 const router = express.Router();
@@ -34,7 +34,7 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-       res.sendFile(imgsrc + image);
+       res.sendFile(__dirname + "/image/ " + image);
     } catch (err) {
         // res.status(404).send(errorHandler(err));
         res.send(err.message)
