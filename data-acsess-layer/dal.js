@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 const connection = mysql.createConnection(
     {
-        host: process.env.HOST,
+        host: process.env.SQL_HOST,
         port: 3306,
-        database: process.env.DATABASE,
+        database: process.env.SQL_DATABASE,
         user:process.env.SQL_USER,
         password:process.env.SQL_PASSWORD,
 
