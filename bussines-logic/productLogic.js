@@ -51,7 +51,7 @@ async function deleteProduct(id){
 }
 async function getProductSales(){
   
-   const qry = `SELECT ProductID as id, ProductName as name , UnitPrice as price , UnitsInStock as stock, ProductImage as image FROM products WHERE UnitsInStock >20`;
+   const qry = `SELECT ProductID as id, ProductName as name , UnitPrice as price , UnitsInStock as stock, ProductImage as image FROM products WHERE UnitsInStock >10`;
    const saleProducts = dal.executeAsync(qry);
    return saleProducts
  
