@@ -11,7 +11,7 @@ const router = express.Router();
 router.use(express.json());
 const storage = multer.diskStorage({
     destination: (req,file,cb)=>{
-           cb(null, path.join(__dirname, '..', 'assets/image'))
+           cb(null, path.join(__dirname, '..', 'controllers/image'))
     },
       filename: (req, file, cb) => {
           const filename = `${Date.now()}${path.extname(file.originalname)}`;
@@ -34,10 +34,11 @@ router.get("/images/:image", (req, res) => {
     try {
         const image = req.params.image;
         // return (res.sendFile(__dirname +  "../assets/image/" + image));
-       res.sendFile(__dirname + "/image/ " + image);
+      return(res.sendFile(__dirname + "/image/" + image));
     } catch (err) {
         // res.status(404).send(errorHandler(err));
-        res.send(err.message)
+        // res.send(err.message)
+        console.log(err)
     }
 });
 
