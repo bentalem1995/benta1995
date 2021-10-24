@@ -2,8 +2,6 @@
     "isProduction":"true",
     "mysql":
     {
-        "host":"sql4.freemysqlhosting.net",
-        "database":"sql4445753",
         "port": 3306
 
     },
