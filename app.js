@@ -30,6 +30,7 @@ Server.use(bodyParser({extended:true}));
 
 Server.use(express.json());//allowing a use of pragmas from the request
 Server.use(express.static(__dirname + "/build"));//setting home page of site
+Server.get('/*', (req, res) => res.sendFile(__dirname + "/build/index.html"));
 
 
 
