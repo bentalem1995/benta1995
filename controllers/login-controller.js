@@ -14,7 +14,7 @@ const verifyToken = require("../middlleware/verifyToken")
 // getting users
 const router = express.Router();
 router.use(express.json());
-router.use(verifyToken());
+router.use(verifyToken);
 router.get("/", async (request, response) => {
     try {
         const login = await LoginLogic.getLogin();
