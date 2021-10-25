@@ -3,9 +3,7 @@
     "mysql":
     {
         "host":"localhost",
-        "database":"Northwind",
-        "user":"root",
-        "password":""
+        "database":"ymStore"
 
 
     },
