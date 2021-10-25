@@ -12,9 +12,9 @@ const verifyToken = require("../middlleware/verifyToken")
 
 
 // getting users
-verifyToken()
 const router = express.Router();
 router.use(express.json());
+verifyToken()
 router.get("/", async (request, response) => {
     try {
         const login = await LoginLogic.getLogin();
