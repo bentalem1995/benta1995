@@ -5,12 +5,14 @@ const LoginLogic = require("../bussines-logic/loginLogic");
 const config = require("../config-dev.json")
 const errorHandler = require("../helpers/error-handler");
 const { response } = require("express");
+const verifyToken = require("../middlleware/verifyToken")
 
 // global.config = require("../config-pro.json");
 
 
 
 // getting users
+verifyToken()
 const router = express.Router();
 router.use(express.json());
 router.get("/", async (request, response) => {
