@@ -42,7 +42,7 @@ router.get("/images/:image", (req, res) => {
     }
 });
 
-// router.use(verifyToken);
+router.use(verifyToken);
 
 // get sales products
 router.get("/sales", async (request, response) => {
