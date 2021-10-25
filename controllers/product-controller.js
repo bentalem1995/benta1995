@@ -42,6 +42,7 @@ router.get("/images/:image", (req, res) => {
     }
 });
 
+// router.use(verifyToken);
 
 // get sales products
 router.get("/sales", async (request, response) => {
@@ -141,7 +142,7 @@ router.get("/:id", async (request, response) => {
     }
 });
 //add products
-verifyToken()
+// verifyToken()
 router.post("/", upload.single('image'), async (request, response) => {
     try {
         const image =request.chosenFilename
