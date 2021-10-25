@@ -6,6 +6,5 @@
 
     },
     "jwt":{
-        "SecretCode":"BentaIsTheBest"
      }
 }

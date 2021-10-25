@@ -15,7 +15,7 @@ function verifyToken(request, response, next) {
             response.status(401).send("you are not logged in");
             return;
         }
-        jwt.verify(token, config.jwt.SecretCode)
+        jwt.verify(token, process.env.SECRET_CODE)
         next();
     }
     catch (err) { console.log(err) }
