@@ -2,8 +2,11 @@
     "isProduction":"false",
     "mysql":
     {
-        "host":"localhost",
-        "database":"ymStore"
+        "host":" sql4.freemysqlhosting.net",
+        "database":"sql4445753",
+        "user":"sql4445753",
+        "password":"9TVMUz3HrW",
+        "port": 3306
 
 
     },
