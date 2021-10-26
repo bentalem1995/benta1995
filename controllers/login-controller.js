@@ -8,7 +8,21 @@ const { response } = require("express");
 const verifyToken = require("../middlleware/verifyToken")
 
 // global.config = require("../config-pro.json");
-
+router.post("/register", async (req, res) => {
+    try {
+        const login = new Login(undefined, req.body.username, req.body.password, req.body.email);
+        const response = await LoginLogic.addLogin(login);
+        // console.log(response);
+        //  req.session.isLogin = true;
+        delete response.password;
+        const token = jwt.sign({ response }, config.jwt.SecretCode, { expiresIn: "30d" })
+        response.token = token;
+        res.status(200).json({response})
+    }
+    catch (err) {
+        response.status(500).send(errorHandler(err));
+    }
+})
 
 
 // getting users
@@ -25,21 +39,7 @@ router.get("/", async (request, response) => {
     }
 });
 // register
-router.post("/register", async (req, res) => {
-    try {
-        const login = new Login(undefined, req.body.username, req.body.password, req.body.email);
-        const response = await LoginLogic.addLogin(login);
-        // console.log(response);
-        //  req.session.isLogin = true;
-        delete response.password;
-        const token = jwt.sign({ response }, config.jwt.SecretCode, { expiresIn: "30d" })
-        response.token = token;
-        res.status(200).json({response})
-    }
-    catch (err) {
-        response.status(500).send(errorHandler(err));
-    }
-})
+
 //login
 router.post("/login", async (req, res) => {
     const username = req.body.username;
