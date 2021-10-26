@@ -8,6 +8,8 @@ const { response } = require("express");
 const verifyToken = require("../middlleware/verifyToken")
 
 // global.config = require("../config-pro.json");
+const router = express.Router();
+router.use(express.json());
 router.post("/register", async (req, res) => {
     try {
         const login = new Login(undefined, req.body.username, req.body.password, req.body.email);
@@ -26,8 +28,7 @@ router.post("/register", async (req, res) => {
 
 
 // getting users
-const router = express.Router();
-router.use(express.json());
+
 router.use(verifyToken);
 router.get("/", async (request, response) => {
     try {
