@@ -120,9 +120,9 @@ router.get("/chains", async (request, response) => {
 // get all products
 router.get("/", (async (request, response) => {
     try {
-        // const products = await productLogic.getAllProduct();
-        // return response.json(products);
-        console.log("hello")
+        const products = await productLogic.getAllProduct();
+        return response.json(products);
+        // console.log("hello")
     }
     catch (err) {
         response.status(404).send(errorHandler(err))
