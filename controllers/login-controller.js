@@ -29,20 +29,11 @@ router.post("/register", async (req, res) => {
 
 // getting users
 
-router.use(verifyToken);
-router.get("/", async (request, response) => {
-    try {
-        const login = await LoginLogic.getLogin();
-        response.json(login);
-    }
-    catch (err) {
-      response.status(404).send(errorHandler(err));
-    }
-});
+
 // register
 
 //login
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
     const username = req.body.username;
     let password = req.body.password;
     const login = new Login(undefined, username, password, undefined);
@@ -81,6 +72,16 @@ router.post("/logout", (req, res) => {
       response.status(400).send(errorHandler(err));
     }
 })
+router.use(verifyToken);
+router.get("/", async (request, response) => {
+    try {
+        const login = await LoginLogic.getLogin();
+        response.json(login);
+    }
+    catch (err) {
+      response.status(404).send(errorHandler(err));
+    }
+});
 module.exports = router;
 
 
