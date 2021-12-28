@@ -9,7 +9,6 @@ const productsController = require("./controllers/product-controller")
 const loginController = require("./controllers/login-controller");
 const addCartController = require("./controllers/addCartController")
 const forumController = require("./controllers/forumController")
-const clocksController = require("./controllers/clocks-Ccontroller")
 const expressSession = require("express-session");
 Server.use(expressSession({
    name:"northwind",
