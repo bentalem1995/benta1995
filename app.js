@@ -22,7 +22,6 @@ Server.use("/api/products",productsController);
 Server.use("/api/cart",addCartController);
 Server.use("/api/login" ,loginController );
 Server.use("/api/forum" ,forumController);
-Server.use("/api/clocks" ,clocksController)
 Server.use(cookies());
 Server.use(bodyParser({extended:true}));
 
