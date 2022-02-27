@@ -1,5 +1,5 @@
 const express = require("express");
-// global.config = require("./config-pro.json");
+global.config = require("./config-pro.json");
 // global.config = require("./config-dev.json");
 const Server = express();
 //global.isProduction =false;
