@@ -1,22 +1,22 @@
 const mysql = require("mysql");
 const connection = mysql.createConnection(
     {
-        host:process.env.SQL_HOST,
-        database:process.env.SQL_DATABASE,
-        user:process.env.SQL_USER,
-        password:process.env.SQL_PASSWORD,
-        
+        host:"sql4.freemysqlhosting.net",
+        database:"sql4475737",
+        user:"sql4475737",
+        password:'kBmNUSQejv',
+        port:3306
 
     });
 connection.connect((err) => {
     if (err) {
-        console.error("could not connect to database");
+        // console.error("can not connect to database");
+        console.log(err);
     }
     else {
         console.log("connection success");
     }
 });
-
 
 
 function executeAsync(qry, values) {
